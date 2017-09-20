@@ -3,7 +3,7 @@
 
 The goal of this project were to develop a classifier for traffic signs using deep convolution neural nets and evaluate its performance on German Trafiic Sign dataset
 
-## Rubric Points - I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+####Rubric Points - I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 
@@ -26,6 +26,12 @@ Here is an exploratory visualization of the data set. It is a histogram of all c
 ![Train set labels](./trainset_labels_histogram.png)
 ![Valid set labels](./valid_labels_histogram.png)
 ![Test set labels](./testset_labels_histogram.png)
+
+The histogram plots show certain classes (class ids 20-30) are underrepresented in the train and validation sets. 
+Hence there might be a need to generate some synthetic data for these classes.
+---
+
+### Pre-processing of data sets:
 
 ###Design and Test a Model Architecture
 
