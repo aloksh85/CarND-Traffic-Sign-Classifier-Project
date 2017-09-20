@@ -84,7 +84,9 @@ Using LeNet architecture with the grayscaling and normalization, I observed that
 
 In order to improve the performance, I added regularization via dropout. I added a dropout layer after each fully connected layer with a keep_probability of 0.5. With regularization, I was able to achieve to higher validation accuracy ~90% but I noticed that it did not increase beyond that even when I tried tuning epochs and learning rate.
 
-Based on some discusssion with fellow students, I did not normalize the data during pre-processing. Whe I train the model on grayscale images I consistently get a validation accuracy greater than 93% and a comparable test accuracy of ~92%. It is not clear to me why normalization of data in this case is leading to undefitting
+Based on some discusssion with fellow students, I did not normalize the data during pre-processing. Whe I train the model on grayscale images I consistently get a validation accuracy greater than 93% and a comparable test accuracy of ~92%. 
+
+It is not clear at this point why normalization of data in this case is leading to undefitting and lower accuracies on validation set
 
 My final model results were:
 * training set accuracy of 98.8% (Cell 12 of notebook)
@@ -93,14 +95,15 @@ My final model results were:
 
 ### Test a Model on New Images
 
-#### Here are seven German traffic signs that I found on the web:
+#### Here are seven (7) German traffic signs that I found on the web:
 
 ![alt text][new_image1] ![alt text][new_image2] ![alt text][new_image3] 
 ![alt text][new_image4] ![alt text][new_image5] ![alt text][new_image6] 
 ![alt text][new_image7]
 
-The first image might be difficult to classify because ...
+Image 1 - This road work traffic sign is similar to few other traffic signs like right of way at next intersection  and fewer training examples. So the classifier can predict it incorect
 
+Image 2 - 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
@@ -136,10 +139,10 @@ For the second image ...
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-[new_image1]:../test_images/in_train_set/01.jpg
+[new_image1]:../test_images/in_train_set/01.jpg =200x200
 [new_image2]:../test_images/in_train_set/18.jpg
 [new_image3]:../test_images/in_train_set/11.jpg
 [new_image4]:../test_images/in_train_set/21.jpg
 [new_image5]:../test_images/in_train_set/19.jpg
 [new_image6]:../test_images/in_train_set/20.jpg
-[new_image6]:../test_images/in_train_set/17.jpg
+[new_image7]:../test_images/in_train_set/17.jpg
