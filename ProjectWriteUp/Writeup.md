@@ -3,11 +3,11 @@
 
 The goal of this project were to develop a classifier for traffic signs using deep convolution neural nets and evaluate its performance on German Trafiic Sign dataset
 
-##**Rubric Points** - I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+## Rubric Points - I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 
-###**Data Set Summary & Exploration**
+### Data Set Summary & Exploration
 
 I used the pandas library to calculate summary statistics of the traffic signs data set:
 
@@ -19,7 +19,7 @@ I used the pandas library to calculate summary statistics of the traffic signs d
 
 ---
 
-###**Exploratory visualization of the dataset.**
+### Exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a histogram of all class labels in the train, validation and test sets.
 
