@@ -74,7 +74,7 @@ For model training I used the following setup and parameters:
 * Batch size : 128
 * Epochs : max 200 ( the training will stop earlier if it exceeds a threshold of 93.5%)
 * Learning rate: 0.001
-* Dropout keep_probability : 0.5
+* Dropout layer keep_probability : 0.5
 
 #### 4. Solution Approach
 
@@ -91,14 +91,13 @@ My final model results were:
 * validation set accuracy of 93.5% (in 30 Epochs. Cell 12 of notebook. )
 * test set accuracy of 91.8% (Cell 13 of notebook)
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### Here are seven German traffic signs that I found on the web:
 
-Here are five German traffic signs that I found on the web:
-
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][new_image1] ![alt text][new_image2] ![alt text][new_image3] 
+![alt text][new_image4] ![alt text][new_image5] ![alt text][new_image6] 
+![alt text][new_image7]
 
 The first image might be difficult to classify because ...
 
@@ -137,4 +136,10 @@ For the second image ...
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-
+[new_image1]:../test_images/in_test_set/01.jpg
+[new_image2]:../test_images/in_test_set/18.jpg
+[new_image3]:../test_images/in_test_set/11.jpg
+[new_image4]:../test_images/in_test_set/21.jpg
+[new_image5]:../test_images/in_test_set/19.jpg
+[new_image6]:../test_images/in_test_set/20.jpg
+[new_image6]:../test_images/in_test_set/17.jpg
