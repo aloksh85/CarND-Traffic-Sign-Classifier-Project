@@ -1,139 +1,109 @@
 
-#**Traffic Sign Recognition** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Build a Traffic Sign Recognition Project**
 
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
+The goal of this project were to develop a classifier for traffic signs using deep convolution neural nets and evaluate its performance on German Trafiic Sign dataset
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+####Rubric Points - I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+### Data Set Summary & Exploration
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+I used the pandas library to calculate summary statistics of the traffic signs data set:
 
-###Data Set Summary & Exploration
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12360
+* The shape of a traffic sign image is 32,32,3
+* The number of unique classes/labels in the data set is 43
 
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+---
 
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
+### Exploratory visualization of the dataset.
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+Here is an exploratory visualization of the data set. It is a histogram of all class labels in the train, validation and test sets.
 
-####2. Include an exploratory visualization of the dataset.
+![Train set labels](./trainset_labels_histogram.png)
+![Valid set labels](./valid_labels_histogram.png)
+![Test set labels](./testset_labels_histogram.png)
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+The histogram plots show certain classes (class ids 20-30) are underrepresented in the train and validation sets. 
+Hence there might be a need to generate some synthetic data for these classes.
 
-![alt text][image1]
+---
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+#### 1. Pre-processing
 
-As a first step, I decided to convert the images to grayscale because ...
+For pre-processing, I decided to convert the images to grayscale to eliminate effects of different lighting conditions
+Here is an example of a traffic sign images from before and after grayscaling.
 
-Here is an example of a traffic sign image before and after grayscaling.
+![Pre-processing](./pre-processed_img.png)
 
-![alt text][image2]
+Another pre-processing step I tried was normalizing the data-set so all features lie in the same range but later I removed this step when I saw that normalizing the images was giving me lower accuracy than what I got with grayscale images only. I am still investigating why normalization is leading to poor results. 
 
-As a last step, I normalized the image data because ...
+I did not augment the data set for now since I could achieve the required accuracy. 
 
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Model architecture.
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Input         		| 32x32x1 Grayscale image   							| 
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28X28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Convolution 5X5    | 1x1 stride, valid padding, outputs 5x5x16	|
+|RELU|
+|Max pooling| 2x2 stride, outputs 5x5x16
+|Fully connected		| outputs 120|
+|RELU|
+|Fully connected		| outputs 84|
+|RELU|
+|Fully connected		| outputs 43|
+|RELU| 
+|Softmax|
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Model Training:
+For model training I used the following setup and parameters:
+* Meaure of error : Cross Entropy
+* Optimizer type: Adam Optimizer
+* Batch size : 128
+* Epochs : max 200 ( the training will stop earlier if it exceeds a threshold of 93.5%)
+* Learning rate: 0.001
+* Dropout layer keep_probability : 0.5
 
-To train the model, I used an ....
+#### 4. Solution Approach
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+In order to develop a classifier with validation accuracy over 93%, I started with a standard LeNet architecture because it has been used earlier for classification using images. 
+
+Using LeNet architecture with the grayscaling and normalization, I observed that my training set accuracy reached ~99% but validation accuracy stayed low.
+
+In order to improve the performance, I added regularization via dropout. I added a dropout layer after each fully connected layer with a keep_probability of 0.5. With regularization, I was able to achieve to higher validation accuracy ~90% but I noticed that it did not increase beyond that even when I tried tuning epochs and learning rate.
+
+Based on some discusssion with fellow students, I did not normalize the data during pre-processing. Whe I train the model on grayscale images I consistently get a validation accuracy greater than 93% and a comparable test accuracy of ~92%. 
+
+It is not clear at this point why normalization of data in this case is leading to undefitting and lower accuracies on validation set
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 98.8% (Cell 12 of notebook)
+* validation set accuracy of 93.5% (in 30 Epochs. Cell 12 of notebook. )
+* test set accuracy of 91.8% (Cell 13 of notebook)
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+### Test a Model on New Images
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+#### Here are seven (7) German traffic signs that I found on the web:
 
-###Test a Model on New Images
+![alt text][new_image1] ![alt text][new_image2] ![alt text][new_image3] 
+![alt text][new_image4] ![alt text][new_image5] ![alt text][new_image6] 
+![alt text][new_image7]
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+Image 1 - This road work traffic sign is similar to few other traffic signs like right of way at next intersection  and fewer training examples. So the classifier can predict it incorect
 
-Here are five German traffic signs that I found on the web:
-
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
-
-The first image might be difficult to classify because ...
-
+Image 2 - 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
@@ -169,4 +139,10 @@ For the second image ...
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-
+[new_image1]:../test_images/in_train_set/01.jpg
+[new_image2]:../test_images/in_train_set/18.jpg
+[new_image3]:../test_images/in_train_set/11.jpg
+[new_image4]:../test_images/in_train_set/21.jpg
+[new_image5]:../test_images/in_train_set/19.jpg
+[new_image6]:../test_images/in_train_set/20.jpg
+[new_image7]:../test_images/in_train_set/17.jpg
