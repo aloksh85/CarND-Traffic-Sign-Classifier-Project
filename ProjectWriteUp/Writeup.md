@@ -109,35 +109,35 @@ My final model results were:
 * Image 6 - 70km/h speed limit - should be easy to classify
 * Image 7 - No Entry sign should be easy to classify
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
-Here are the results of the prediction:
+#### Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Slippery road sign      		| Right of way at next intersection 									| 
+| No entry     			| Children crossing 										|
+| No passing				| Road narrows on right											|
+| Right of way at next intersection	      		| Right of way at next intersection		|
+| Road work			| Dangerous curve to left     							|
+| Speed Limit 70km/h | Speed Limit 70 km/h|
+| Pedestrians | No entry|
 
+The model was able to correctly guess **2 out of 7** traffic signs, which gives an accuracy of 28%. This is lower than the accuracy seen on test set. 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+####Prediction probabilities
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+The code for making predictions on my final model is located in the cells 12-15 of IPython notebook
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The probabilities for images are as below: 
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+**Slippery Road sign**
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
+| 1.0         			| 11:Right of way   									| 
+| ~0.0     				| 25:Road work 										|
+| ~0.0				| 0 : Speed limit 20kph											|
+| ~0.0	      			| 1:Speed limit 30kph					 				|
+| ~0.0				    | 2:Speed limit 40kph|
 
 For the second image ... 
 
