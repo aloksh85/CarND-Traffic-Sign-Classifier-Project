@@ -101,9 +101,14 @@ My final model results were:
 ![alt text][new_image4] ![alt text][new_image5] ![alt text][new_image6] 
 ![alt text][new_image7]
 
-Image 1 - This road work traffic sign is similar to few other traffic signs like right of way at next intersection  and fewer training examples. So the classifier can predict it incorect
+* Image 1 - Road work sign is similar to few other traffic signs like right of way at next intersection  and fewer training examples. So the classifier can predict it incorect
+* Image 2 - No passing sign - the image is rotated which can cause problems
+* Image 3 - Pedestrian crossing sign can get confused with other similar signs
+* Image 4 - Right of way at next intersection - should be easily classified. 
+* Image 5 - Slippery road sign is covered with snow. Hence difficult to classify
+* Image 6 - 70km/h speed limit - should be easy to classify
+* Image 7 - No Entry sign should be easy to classify
 
-Image 2 - 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
