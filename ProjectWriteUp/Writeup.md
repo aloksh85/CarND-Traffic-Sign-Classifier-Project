@@ -129,7 +129,7 @@ The code for making predictions on my final model is located in the cells 12-15 
 
 The probabilities for images are as below: 
 
-**Slippery Road sign**
+**Slippery Road sign - Class ID: 23**
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -139,7 +139,16 @@ The probabilities for images are as below:
 | ~0.0	      			| 1:Speed limit 30kph					 				|
 | ~0.0				    | 2:Speed limit 40kph|
 
-For the second image ... 
+For the second image : **
+**Slippery Road sign - Class ID: 23**
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0         			| 28:Right of way   									| 
+| ~0.0     				| 0:Speed limit 20kph 										|
+| ~0.0				| 1 : Speed limit 30kph											|
+| ~0.0	      			| 2:Speed limit 50kph					 				|
+| ~0.0				    | 3:Speed limit 60kph|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
