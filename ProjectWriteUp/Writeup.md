@@ -139,7 +139,7 @@ For the second image ...
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-[new_image1]:../test_images/in_train_set/01.jpg =200x200
+[new_image1]:../test_images/in_train_set/01.jpg
 [new_image2]:../test_images/in_train_set/18.jpg
 [new_image3]:../test_images/in_train_set/11.jpg
 [new_image4]:../test_images/in_train_set/21.jpg
