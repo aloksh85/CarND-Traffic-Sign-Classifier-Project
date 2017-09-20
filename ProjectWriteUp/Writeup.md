@@ -29,6 +29,7 @@ Here is an exploratory visualization of the data set. It is a histogram of all c
 
 The histogram plots show certain classes (class ids 20-30) are underrepresented in the train and validation sets. 
 Hence there might be a need to generate some synthetic data for these classes.
+
 ---
 
 ### Pre-processing of data sets:
