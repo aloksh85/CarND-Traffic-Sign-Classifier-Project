@@ -130,7 +130,7 @@ The code for making predictions on my final model is located in the cells 12-15 
 The probabilities for images are as below: 
 
 First Image **Slippery Road sign - Class ID: 23**
-[img][new_img1]
+ ![img][new_img1]
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -141,7 +141,8 @@ First Image **Slippery Road sign - Class ID: 23**
 | ~0.0				    | 2:Speed limit 40kph|
 
 Second image : **Slippery Road sign - Class ID: 23**
-[img][new_img2]
+![img][new_img2]
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.0         			| 28:Children crossing   									| 
@@ -151,7 +152,8 @@ Second image : **Slippery Road sign - Class ID: 23**
 | ~0.0				    | 3:Speed limit 60kph|
 
 Third image : **No passing sign sign - Class ID: 9**
-[img][new_img3]
+![img][new_img3]
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.0         			| 26:Traffic Signals   									| 
