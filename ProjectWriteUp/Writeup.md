@@ -3,7 +3,7 @@
 
 The goal of this project were to develop a classifier for traffic signs using deep convolution neural nets and evaluate its performance on German Trafiic Sign dataset
 
-####Rubric Points - I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 
