@@ -206,8 +206,8 @@ Seventh image : **No Entry sign - Class ID: 17**
 | ~0.0				| 1 : Speed limit 30kph											|
 | ~0.0	      			| 2:Speed limit 50kph					 				|
 | ~0.0				    | 3:Speed limit 60kph|
-### (Optional) Visualizing the N eural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+### (Optional) Visualizing the Neural Network 
+I was able to visualize the featuremaps obtained from convolution layer 1 and convolution 2. From the visualizations, I can observe that the network is able to learn the outer shapes (triangles and circles) of most signs. But the internal details of signs are not very well recognized. This is probably the reason why it is able to classify simples signs correctly like No entry and speed limit 
 
 [new_image1]:../test_images/in_train_set/01.jpg
 [new_image2]:../test_images/in_train_set/18.jpg
