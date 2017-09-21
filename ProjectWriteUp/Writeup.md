@@ -89,9 +89,9 @@ Based on some discusssion with fellow students, I did not normalize the data dur
 It is not clear at this point why normalization of data in this case is leading to undefitting and lower accuracies on validation set
 
 My final model results were:
-* training set accuracy of 98.8% (Cell 12 of notebook)
-* validation set accuracy of 93.5% (in 30 Epochs. Cell 12 of notebook. )
-* test set accuracy of 91.8% (Cell 13 of notebook)
+* training set accuracy of 99.2% (Cell 10 of notebook)
+* validation set accuracy of 94.7% (in 52 Epochs. Cell 10 of notebook. )
+* test set accuracy of 91.8% (Cell 11 of notebook)
 
 ### Test a Model on New Images
 
@@ -121,7 +121,7 @@ My final model results were:
 | Speed Limit 70km/h | Speed Limit 70 km/h|
 | Pedestrians | No entry|
 
-The model was able to correctly guess **2 out of 7** traffic signs, which gives an accuracy of 28%. This is lower than the accuracy seen on test set. 
+The model was able to correctly guess **3 out of 7** traffic signs, which gives an accuracy of 40%. This is lower than the accuracy seen on test set. 
 
 ####Prediction probabilities
 
