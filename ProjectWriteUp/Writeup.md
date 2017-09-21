@@ -123,7 +123,7 @@ My final model results were:
 
 The model was able to correctly guess **3 out of 7** traffic signs, which gives an accuracy of 40%. This is lower than the accuracy seen on test set. 
 
-####Prediction probabilities
+#### Prediction probabilities
 
 The code for making predictions on my final model is located in the cells 12-15 of IPython notebook
 
