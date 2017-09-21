@@ -130,6 +130,7 @@ The code for making predictions on my final model is located in the cells 12-15 
 The probabilities for images are as below: 
 
 First Image **Slippery Road sign - Class ID: 23**
+[img][new_img1]
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -140,7 +141,7 @@ First Image **Slippery Road sign - Class ID: 23**
 | ~0.0				    | 2:Speed limit 40kph|
 
 Second image : **Slippery Road sign - Class ID: 23**
-
+[img][new_img2]
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.0         			| 28:Children crossing   									| 
@@ -149,15 +150,15 @@ Second image : **Slippery Road sign - Class ID: 23**
 | ~0.0	      			| 2:Speed limit 50kph					 				|
 | ~0.0				    | 3:Speed limit 60kph|
 
-Third image : **Slippery Road sign - Class ID: 23** (TODO)
-
+Third image : **No passing sign sign - Class ID: 9**
+[img][new_img3]
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1.0         			| 28:Children crossing   									| 
-| ~0.0     				| 0:Speed limit 20kph 										|
-| ~0.0				| 1 : Speed limit 30kph											|
-| ~0.0	      			| 2:Speed limit 50kph					 				|
-| ~0.0				    | 3:Speed limit 60kph|
+| 1.0         			| 26:Traffic Signals   									| 
+| ~0.0     				| 29:Bicycles Crossing									|
+| ~0.0				| 22 : Bumpy road											|
+| ~0.0	      			| 39:Keep Left				 				|
+| ~0.0				    | 18:General caution|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
