@@ -130,7 +130,7 @@ The code for making predictions on my final model is located in the cells 12-15 
 The probabilities for images are as below: 
 
 First Image **Slippery Road sign - Class ID: 23**
- ![img][new_img1]
+ ![img][new_image1]
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -141,7 +141,7 @@ First Image **Slippery Road sign - Class ID: 23**
 | ~0.0				    | 2:Speed limit 40kph|
 
 Second image : **Slippery Road sign - Class ID: 23**
-![img][new_img2]
+![img][new_image2]
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -152,7 +152,7 @@ Second image : **Slippery Road sign - Class ID: 23**
 | ~0.0				    | 3:Speed limit 60kph|
 
 Third image : **No passing sign sign - Class ID: 9**
-![img][new_img3]
+![img][new_image3]
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -162,7 +162,51 @@ Third image : **No passing sign sign - Class ID: 9**
 | ~0.0	      			| 39:Keep Left				 				|
 | ~0.0				    | 18:General caution|
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+Fourth image : **Right of way at next intersection sign - Class ID: 11**
+![img][new_image4]
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0         			| 11:Right of way   									| 
+| ~0.0     				| 25:Road work 										|
+| ~0.0				| 0 : Speed limit 20kph											|
+| ~0.0	      			| 1:Speed limit 30kph					 				|
+| ~0.0				    | 2:Speed limit 40kph|
+
+Fifth image : **Right of way at next intersection sign - Class ID: 25**
+![img][new_image5]
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0         			| 19:Dangerous curve to left  									| 
+| ~0.0     				| 11:Right of way at next intersection 										|
+| ~0.0				| 0 : Speed limit 20kph											|
+| ~0.0	      			| 1:Speed limit 30kph					 				|
+| ~0.0				    | 2:Speed limit 40kph|
+
+Sixth image : **Speed Limit 70kph- Class ID: 4**
+![img][new_image6]
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0         			| 4: Speed Limit70kph  									| 
+| ~0.0     				| 18:General Caution									|
+| ~0.0				| 0 : Speed limit 20kph											|
+| ~0.0	      			| 1:Speed limit 30kph					 				|
+| ~0.0				    | 2:Speed limit 50kph|
+
+
+Seventh image : **Pedestrians sign - Class ID: 27**
+![img][new_image7]
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0         			| 17:No Entry								| 
+| ~0.0     				| 0:Speed Limit 20kph 										|
+| ~0.0				| 1 : Speed limit 30kph											|
+| ~0.0	      			| 2:Speed limit 50kph					 				|
+| ~0.0				    | 3:Speed limit 60kph|
+### (Optional) Visualizing the N eural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 [new_image1]:../test_images/in_train_set/01.jpg
